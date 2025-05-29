@@ -51,7 +51,7 @@ export default function HarvestBlog() {
               src="/assets/blog-2.jpg"
               width={200}
               height={200}
-              className="w-full max-h-[260px] rounded-2xl object-cover "
+              className="w-full max-h-[260px] sm:max-h-[360px] lg:max-h-[260px] rounded-2xl"
               alt="A fruit image"
             />
           </figure>
@@ -75,8 +75,7 @@ export default function HarvestBlog() {
               src="/assets/blog-3.jpg"
               width={200}
               height={200}
-              // className="max-sm:w-[140px] max-sm:h-[140px] max-lg:w-[200px] max-lg:h-[200px] max-2xl:w-[200px] max-2xl:h-[200px] py-5"
-              className="w-full max-h-[260px] rounded-2xl"
+              className="w-full max-h-[260px] sm:max-h-[360px] lg:max-h-[260px] rounded-2xl"
               alt="A fruit image"
             />
           </figure>

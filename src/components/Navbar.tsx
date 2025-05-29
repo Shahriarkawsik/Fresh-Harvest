@@ -1,25 +1,24 @@
 "use client";
 import Link from "next/link";
-import { IoMdClose, IoMdHeart } from "react-icons/io";
+import { IoMdClose } from "react-icons/io";
 import { usePathname } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { FaEye, FaEyeSlash, FaHeart } from "react-icons/fa6";
+import { CiShoppingCart } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import {
   Dialog,
   DialogContent,
+  DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@radix-ui/react-dialog";
-import { DialogHeader } from "./ui/dialog";
-import { Checkbox } from "@radix-ui/react-checkbox";
-import { RiShoppingCart2Fill } from "react-icons/ri";
+} from "@/components/ui/dialog";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const Navbar = () => {
   const pathName = usePathname();
-  // console.log(pathName);
   /////////////////////dumy
   const status = "authenticated";
 
@@ -70,12 +69,12 @@ const Navbar = () => {
             >
               <p className="flex items-center gap-2">
                 <Image
-                  src={"/assets/logo.png"}
+                  src="/assets/logo.png"
                   alt="logo"
                   width={30}
                   height={30}
                   className="bg-transparent rounded-full w-6 h-6"
-                />
+                />{" "}
                 <span className="text-[#212337] text-xl md:text-2xl font-bold">
                   Fresh Harvests
                 </span>
@@ -104,39 +103,17 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <div className=" cursor-pointer p-0.5">
               <p className="hidden lg:flex items-center gap-2">
-                <IoMdHeart
-                  className={`${
-                    pathName === "/blog" ? "text-[#749B3F]" : "text-black"
-                  } text-3xl`}
-                />
-                <span
-                  className={`${
-                    pathName === "/blog" ? "text-[#749B3F]" : "text-black"
-                  } text-xl`}
-                >
-                  Favorites
-                </span>
+                <FaHeart /> Favorites
               </p>
             </div>
             <div className="flex items-center gap-3">
               <Link href="/card" className="relative">
-                <RiShoppingCart2Fill
-                  className={`${
-                    pathName === "/blog" ? "text-[#749B3F]" : "text-black"
-                  }text-3xl`}
-                  size={25}
-                />
+                <CiShoppingCart size={25} />
                 <sup className="absolute left-4 -top-1 w-4 h-4 rounded-full bg-red-500 flex justify-center items-center text-sm p-1 text-white">
                   0
                 </sup>
-              </Link>
-              <p
-                className={`${
-                  pathName === "/blog" ? "text-[#749B3F]" : "text-black"
-                }text-3xl hidden lg:flex`}
-              >
-                Cart
-              </p>
+              </Link>{" "}
+              <p className="hidden lg:flex">Cart</p>
             </div>
             {/* modal start from here  */}
             <div className="hidden lg:flex">
@@ -215,9 +192,9 @@ const Navbar = () => {
       {/* mobile menu */}
       <div>
         {/* overlay */}
-        {/* <div
+        <div
           className={`${openNav} fixed inset-0 transform transition-all duration-500 z-[1000] bg-black opacity-0`}
-        ></div> */}
+        ></div>
 
         {/* sidebar menu */}
         <div

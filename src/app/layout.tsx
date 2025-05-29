@@ -20,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      {/* <head>
         <link rel="icon" href="/favicon.png" sizes="any" type="image/png" />
-      </head>
+      </head> */}
       <body className={`${rubik.variable} antialiased`}>
         <header>
           <Navbar />

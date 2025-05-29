@@ -1,17 +1,26 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+type Product = {
+  id: string;
+  images: string[];
+  productName: string;
+  price: number;
+};
+type ApiResponse = {
+  success: boolean;
+  data: Product[];
+};
 export default function RelatedProducts() {
-  const [products, setProducts] = useState<string[]>([]);
-  console.log(products[0]);
-
+  const [products, setProducts] = useState<Product[]>([]);
+  console.log(products);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
           "https://code-commando.com/api/v1/products"
         );
-        const result: string[] = await response.json();
+        const result: ApiResponse = await response.json();
         setProducts(result.data);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -20,11 +29,7 @@ export default function RelatedProducts() {
 
     fetchData();
   }, []);
-  // {
-  //   fetch('https://code-commando.com/api/v1/products')
-  //   .then((data: string[])=> data.json())
-  //   .then((result: string[]) => setProducts(result))
-  // },
+
   return (
     <section>
       {/* Header */}
