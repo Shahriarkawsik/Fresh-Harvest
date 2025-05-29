@@ -1,6 +1,30 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 export default function RelatedProducts() {
+  const [products, setProducts] = useState<string[]>([]);
+  console.log(products[0]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://code-commando.com/api/v1/products"
+        );
+        const result: string[] = await response.json();
+        setProducts(result.data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  // {
+  //   fetch('https://code-commando.com/api/v1/products')
+  //   .then((data: string[])=> data.json())
+  //   .then((result: string[]) => setProducts(result))
+  // },
   return (
     <section>
       {/* Header */}
@@ -25,7 +49,7 @@ export default function RelatedProducts() {
               src="/assets/kiwi.png"
               width={200}
               height={200}
-              className="h-full py-5"
+              className="max-sm:w-[140px] max-sm:h-[140px] max-lg:w-[200px] max-lg:h-[200px] max-2xl:w-[200px] max-2xl:h-[200px] py-5"
               alt="A fruit image"
             />
           </figure>
@@ -44,7 +68,7 @@ export default function RelatedProducts() {
               src="/assets/kiwi.png"
               width={200}
               height={200}
-              className="h-full py-5"
+              className="max-sm:w-[140px] max-sm:h-[140px] max-lg:w-[200px] max-lg:h-[200px] max-2xl:w-[200px] max-2xl:h-[200px] py-5"
               alt="A fruit image"
             />
           </figure>
@@ -63,7 +87,7 @@ export default function RelatedProducts() {
               src="/assets/kiwi.png"
               width={200}
               height={200}
-              className="h-full py-5"
+              className="max-sm:w-[140px] max-sm:h-[140px] max-lg:w-[200px] max-lg:h-[200px] max-2xl:w-[200px] max-2xl:h-[200px] py-5"
               alt="A fruit image"
             />
           </figure>
@@ -82,7 +106,7 @@ export default function RelatedProducts() {
               src="/assets/kiwi.png"
               width={200}
               height={200}
-              className="h-full py-5"
+              className="max-sm:w-[140px] max-sm:h-[140px] max-lg:w-[200px] max-lg:h-[200px] max-2xl:w-[200px] max-2xl:h-[200px] py-5"
               alt="A fruit image"
             />
           </figure>
