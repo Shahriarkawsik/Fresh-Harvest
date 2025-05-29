@@ -69,13 +69,12 @@ const Navbar = () => {
             >
               <p className="flex items-center gap-2">
                 <Image
-                  // src={"/assets/bgImage.jpg"}
                   src={"/assets/logo.png"}
                   alt="logo"
                   width={30}
                   height={30}
                   className="bg-transparent rounded-full w-6 h-6"
-                />{" "}
+                />
                 <span className="text-[#212337] text-xl md:text-2xl font-bold">
                   Fresh Harvests
                 </span>

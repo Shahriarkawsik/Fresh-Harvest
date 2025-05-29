@@ -1,56 +1,58 @@
+import Image from "next/image";
 import React from "react";
 
 const SpecialOffer = () => {
   return (
-    <div className="relative overflow-hidden mt-24">
-      {/* Flipped background */}
-      <div
-        className="absolute inset-0 -z-10 scale-x-[-1]"
-        style={{
-          backgroundImage: "url('/fruit_background.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-[1213px] mx-auto container mt-24 py-[90px] md:pl-[90px] space-y-2 p-4 md:p-0 text-black">
-        <span className="text-[14px] md:text-[20px] text-[#749B3F] font-medium bg-[rgba(116,155,63,0.1)] py-2 px-4">
+    <section className="relative lg:mt-32">
+      <div className="max-lg:text-center ">
+        <button className="text-[14px] text-[#749B3F] sm:text-xl bg-[#749B3F1A] rounded-lg lg:rounded-lg font-semibold text-greenText px-3 py-1 ">
           Special Offer
-        </span>
-        <h1 className="text-[48px] md:text-[80px] font-500 text-black">
+        </button>
+        <h1 className="text-[48px] md:text-[80px] font-bold text-[#212337]">
           Seasonal Fruit Bundle
         </h1>
-        <h4 className="text-[32px] md:text-[48px] font-500">
-          Discount up to <span className="text-[#FF6A1A]">80% OFF</span>
+        <h4 className="text-[32px] md:text-[48px] font-semibold">
+          <span className="text-[#212337]">Discount up to </span>{" "}
+          <br className="lg:hidden" />
+          <span className="text-[#FF6A1A]">80% OFF</span>
         </h4>
-
-        <div className="flex gap-2">
-          <div className="p-4 bg-[#ddd] text-black">
-            <h4>03</h4>
-            <p>Days</p>
+        {/* countdown */}
+        <div className="flex max-lg:justify-center max-lg:items-center gap-2">
+          <div className="flex flex-col justify-center items-center gap-2 shadow bg-[#FFF] rounded-xl w-[98px] h-[122px]">
+            <h4 className="text-[#212337] text-4xl font-medium">03</h4>
+            <p className="text-[#4A4A52] text-xl">Days</p>
           </div>
-          <div className="p-4 bg-[#ddd] text-black">
-            <h4>18</h4>
-            <p>Hours</p>
+          <div className="flex flex-col justify-center items-center gap-2 shadow bg-[#FFF] rounded-xl w-[98px] h-[122px]">
+            <h4 className="text-[#212337] text-4xl font-medium">18</h4>
+            <p className="text-[#4A4A52] text-xl">Hours</p>
           </div>
-          <div className="p-4 bg-[#ddd] text-black">
-            <h4>54min</h4>
-            <p>Min</p>
+          <div className="flex flex-col justify-center items-center gap-2 shadow bg-[#FFF] rounded-xl w-[98px] h-[122px]">
+            <h4 className="text-[#212337] text-4xl font-medium">54</h4>
+            <p className="text-[#4A4A52] text-xl">Min</p>
           </div>
-          <div className="p-4 bg-[#ddd] text-black">
-            <h4>21</h4>
-            <p>Second</p>
+          <div className="flex flex-col justify-center items-center gap-2 shadow bg-[#FFF] rounded-xl w-[98px] h-[122px]">
+            <h4 className="text-[#212337] text-4xl font-medium">21</h4>
+            <p className="text-[#4A4A52] text-xl">Second</p>
           </div>
         </div>
-
+        {/* Promo code */}
         <div className=" mt-5">
-          <p className="py-[15px] px-[31px] bg-[#176D38] w-fit mx-auto md:mx-0 text-white">
-            CODE : FRESH28
-          </p>
+          <button className="rounded-[92.88px] px-8 py-4 text-2xl lg:text-3xl font-semibold bg-[#176D38]">
+            <span className="text-[#FFF]">CODE :</span>{" "}
+            <span className="text-[#fac714]">FRESH28</span>
+          </button>
         </div>
       </div>
-    </div>
+      <figure className="max-lg:hidden absolute lg:top-[25%] lg:right-[0%] 2xl:top-[20%] 2xl:right-[10%]">
+        <Image
+          src={"/assets/fruits.png"}
+          alt="logo"
+          width={627}
+          height={380}
+          className=""
+        />
+      </figure>
+    </section>
   );
 };
 

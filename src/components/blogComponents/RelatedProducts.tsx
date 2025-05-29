@@ -29,8 +29,8 @@ export default function RelatedProducts() {
     <section>
       {/* Header */}
       <div className="text-center space-y-4 lg:space-y-5">
-        <button className="text-[14px] sm:text-xl bg-[#749B3F1A] rounded-lg lg:rounded-xl font-semibold text-greenText px-3 py-1 ">
-          Out Products
+        <button className="text-[14px] sm:text-xl bg-[#749B3F1A] rounded-lg lg:rounded-lg text-[#749B3F] font-semibold text-greenText px-3 py-1 ">
+          Our Products
         </button>
         <h2 className="text-[#212337] font-medium text-3xl sm:text-4xl lg:text-5xl">
           Related Products

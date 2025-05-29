@@ -54,7 +54,7 @@ export default function AboutUs() {
 
           {/* content */}
           <div className="space-y-5 lg:space-y-10 ">
-            <button className="text-[14px] sm:text-xl bg-[#749B3F1A] rounded-xl font-medium text-greenText px-3 py-1 ">
+            <button className="text-[14px] text-[#749B3F] sm:text-xl bg-[#749B3F1A] rounded-lg font-medium px-3 py-1 ">
               About Us
             </button>
             <h2 className="text-3xl md:text-5xl text-[#212337] font-semibold">
@@ -68,7 +68,7 @@ export default function AboutUs() {
               dolor. Optio, deserunt. Nisi, magni facilis, neque non sapiente
               recusandae unde dolorem quae reiciendis, voluptas qui.
             </p>
-            <button className=" border border-[#FF6A1A]  text-[#FF6A1A] max-sm:text-[14px] text-xl lg:px-8 lg:py-4 rounded-lg">
+            <button className=" border border-[#FF6A1A]  text-[#FF6A1A] max-sm:text-[14px] text-xl px-6 py-3 lg:px-8 lg:py-4 rounded-lg">
               Read More
             </button>
           </div>
