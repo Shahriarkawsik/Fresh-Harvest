@@ -26,7 +26,7 @@ export default function ReviewComponent() {
               : "border border-[#D9D9D9]"
           }`}
         >
-          Review ({0})
+          Review ({1})
         </button>
       </div>
       {/* ToDo: */}

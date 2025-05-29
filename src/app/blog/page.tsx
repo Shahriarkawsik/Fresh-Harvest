@@ -5,7 +5,7 @@ import "./../globals.css";
 import { FaHeart } from "react-icons/fa";
 import { MdShoppingCart } from "react-icons/md";
 // import { ReactStarsRating } from 'react-awesome-stars-rating';
-import { Rating } from "react-simple-star-rating";
+// import { Rating } from "react-simple-star-rating";
 import ReviewComponent from "@/components/blogComponents/ReviewComponent";
 
 export default function Blog() {
