@@ -8,19 +8,18 @@ export default function ReviewComponent() {
       <div className="flex items-center gap-5">
         <button
           onClick={() => setToggle("Des")}
-          className={`px-6 py-3 rounded-lg text-xl ${
+          className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-xl ${
             toggle === "Des"
               ? "bg-[#749B3F] text-white"
               : "border border-[#D9D9D9]"
           }`}
-          // className="px-6 py-3 rounded-lg text-xl bg-[#749B3F] text-white"
         >
           Description
         </button>
         <button
           onClick={() => setToggle("Rev")}
           // className="px-6 py-3 rounded-lg border border-[#D9D9D9] text-xl"
-          className={`px-6 py-3 rounded-lg text-xl ${
+          className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-xl ${
             toggle === "Rev"
               ? "bg-[#749B3F] text-white"
               : "border border-[#D9D9D9]"

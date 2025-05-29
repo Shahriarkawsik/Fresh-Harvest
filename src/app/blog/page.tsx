@@ -8,7 +8,7 @@ import ProductDetails from "@/components/blogComponents/ProductDetails";
 
 export default function Blog() {
   return (
-    <section className="container mx-auto space-y-6 sm:space-y-10">
+    <section className="w-[92%] md:w-[92%] container mx-auto space-y-6 sm:space-y-10">
       {/* section Description */}
       <ProductDetails />
       {/* Review */}
