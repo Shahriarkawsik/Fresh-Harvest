@@ -5,7 +5,7 @@ export default function AboutUs() {
   return (
     <div>
       <div className="max-w-[1213px] mx-auto container ">
-        <div className=" grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-16 p-4 md:p-0">
+        <div className=" grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 items-center justify-center gap-16 p-4 md:p-0">
           <div className="relative">
             {/* image */}
             <figure>
@@ -18,7 +18,7 @@ export default function AboutUs() {
               />
             </figure>
             {/* Fresh Harvest */}
-            <div className="flex items-center gap-2 sm:gap-4 rounded-lg px-4 py-1 md:px-6 md:py-3 bg-[#fff] absolute bottom-20 right-16 lg:bottom-40 lg:left-20 shadow">
+            <button className="flex items-center gap-2 sm:gap-4 rounded-lg px-4 py-1 md:px-6 md:py-3 bg-[#fff] absolute bottom-[30%] right-[20%] sm:bottom-[30%] sm:right-[20%] lg:bottom-[40%] shadow">
               <Image
                 src={"/assets/logo.png"}
                 width={25}
@@ -28,30 +28,32 @@ export default function AboutUs() {
               <h6 className="text-[#212337] font-bold text-[15px] sm:text-xl">
                 Fresh Harvest
               </h6>
-            </div>
+            </button>
             {/* vegetable Card*/}
-            <div className="p-2 rounded-xl shadow text-center space-y-1 absolute -bottom-20 -right-5  sm:-bottom-16 sm:right-20 bg-[#fff]">
+            <div className="p-2 rounded-xl shadow text-center space-y-1 sm:space-y-2 absolute -bottom-20 -right-5 sm:-bottom-[20%] sm:right-[1%] -lg:bottom-[40%] -lg:right-[1%] bg-[#fff]">
               <figure className="bg-[#F4F6F6] rounded-lg w-full h-full flex items-center justify-center p-1">
                 <Image
                   src={"/assets/latos.png"}
                   width={140}
                   height={160}
-                  className="max-sm:w-[70px] max-sm:h-[60px]"
+                  className="max-sm:w-[70px] max-sm:h-[60px] max-lg:w-[120px] max-lg:h-[100px]"
                   alt="a vegetable image"
                 />
               </figure>
-              <h4 className="text-[#212337] text-[9.6px] font-medium">
+              <h4 className="text-[#212337] text-[9.6px] sm:text-[14px] font-medium">
                 Mushroom
               </h4>
-              <p className="text-[#4A4A52] text-[9.6px]">$2.3/kg</p>
-              <button className="text-[#212337] border border-[#D9D9D9] w-full rounded-md py-2 text-[9.6px] hover:bg-[#FF6A1A] hover:text-white hover:transition-all">
+              <p className="text-[#4A4A52] text-[9.6px] sm:text-[14px]">
+                $2.3/kg
+              </p>
+              <button className="text-[#212337] border border-[#D9D9D9] w-full rounded-md py-2 text-[9.6px] sm:text-[14px] hover:bg-[#FF6A1A] hover:text-white hover:transition-all">
                 Add to cart
               </button>
             </div>
           </div>
 
           {/* content */}
-          <div className="space-y-5 lg:space-y-10 text-center">
+          <div className="space-y-5 lg:space-y-10 ">
             <button className="text-[14px] sm:text-xl bg-[#749B3F1A] rounded-xl font-medium text-greenText px-3 py-1 ">
               About Us
             </button>
