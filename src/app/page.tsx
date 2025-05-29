@@ -1,6 +1,7 @@
 "use client";
 import AboutUs from "@/components/homeComponents/AboutComponent";
 import FreshProductComponent from "@/components/homeComponents/FreshProductComponent";
+import HarvestBlog from "@/components/homeComponents/HarvestBlogComponents";
 import SpecialOffer from "@/components/homeComponents/SpecialOfferComponent";
 import Testimonial from "@/components/homeComponents/TestimonialComponent";
 
@@ -11,6 +12,7 @@ export default function Home() {
       <AboutUs />
       <SpecialOffer />
       <Testimonial />
+      <HarvestBlog />
     </section>
   );
 }
