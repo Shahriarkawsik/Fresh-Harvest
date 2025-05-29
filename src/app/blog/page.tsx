@@ -13,6 +13,7 @@ export default function Blog() {
       <ProductDetails />
       {/* Review */}
       <ReviewComponent />
+      {/* Related Product */}
       <RelatedProducts />
     </section>
   );
