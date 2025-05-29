@@ -5,7 +5,7 @@ export default function RelatedProducts() {
     <section>
       {/* Header */}
       <div className="text-center space-y-4 lg:space-y-5">
-        <button className="text-[14px] sm:text-xl bg-[#749B3F1A] rounded-lg lg:rounded-xl font-medium text-greenText px-3 py-1 ">
+        <button className="text-[14px] sm:text-xl bg-[#749B3F1A] rounded-lg lg:rounded-xl font-semibold text-greenText px-3 py-1 ">
           Out Products
         </button>
         <h2 className="text-[#212337] font-medium text-3xl sm:text-4xl lg:text-5xl">
@@ -16,6 +16,7 @@ export default function RelatedProducts() {
           fruits, vegetables, and salad ingredients.
         </p>
       </div>
+      {/* Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Card one */}
         <div className="p-4 rounded-2xl shadow-xl space-y-4">
@@ -31,7 +32,7 @@ export default function RelatedProducts() {
           <div className="text-center space-y-2">
             <h4 className="font-medium text-[#212337] text-xl">Kiwi</h4>
             <p className="text-[#4A4A52] ">$5.3/kg</p>
-            <button className="text-[#212337] font-medium border border-[#D9D9D9] w-full rounded-md py-1 text-xl">
+            <button className="text-[#212337] font-medium border border-[#D9D9D9] w-full rounded-md py-1 text-xl hover:bg-[#FF6A1A] hover:text-white hover:transition-all">
               Add to cart
             </button>
           </div>
@@ -50,7 +51,7 @@ export default function RelatedProducts() {
           <div className="text-center space-y-2">
             <h4 className="font-medium text-[#212337] text-xl">Kiwi</h4>
             <p className="text-[#4A4A52] ">$5.3/kg</p>
-            <button className="text-[#212337] font-medium border border-[#D9D9D9] w-full rounded-md py-1 text-xl">
+            <button className="text-[#212337] font-medium border border-[#D9D9D9] w-full rounded-md py-1 text-xl hover:bg-[#FF6A1A] hover:text-white hover:transition-all">
               Add to cart
             </button>
           </div>
@@ -69,7 +70,7 @@ export default function RelatedProducts() {
           <div className="text-center space-y-2">
             <h4 className="font-medium text-[#212337] text-xl">Kiwi</h4>
             <p className="text-[#4A4A52] ">$5.3/kg</p>
-            <button className="text-[#212337] font-medium border border-[#D9D9D9] w-full rounded-md py-1 text-xl">
+            <button className="text-[#212337] font-medium border border-[#D9D9D9] w-full rounded-md py-1 text-xl hover:bg-[#FF6A1A] hover:text-white hover:transition-all">
               Add to cart
             </button>
           </div>
@@ -88,7 +89,7 @@ export default function RelatedProducts() {
           <div className="text-center space-y-2">
             <h4 className="font-medium text-[#212337] text-xl">Kiwi</h4>
             <p className="text-[#4A4A52] ">$5.3/kg</p>
-            <button className="text-[#212337] font-medium border border-[#D9D9D9] w-full rounded-md py-1 text-xl">
+            <button className="text-[#212337] font-medium border border-[#D9D9D9] w-full rounded-md py-1 text-xl hover:bg-[#FF6A1A] hover:text-white hover:transition-all">
               Add to cart
             </button>
           </div>
