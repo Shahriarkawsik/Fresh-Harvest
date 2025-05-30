@@ -1,7 +1,42 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const SpecialOffer = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  // Countdown logic
+  useEffect(() => {
+    const countdownTarget = new Date("2025-06-07T23:59:59");
+
+    const updateCountdown = () => {
+      const now = new Date();
+      const difference = countdownTarget.getTime() - now.getTime();
+
+      if (difference <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((difference / 1000 / 60) % 60);
+      const seconds = Math.floor((difference / 1000) % 60);
+
+      setTimeLeft({ days, hours, minutes, seconds });
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative lg:mt-32">
       <div className="max-lg:text-center ">
@@ -18,20 +53,31 @@ const SpecialOffer = () => {
         </h4>
         {/* countdown */}
         <div className="flex max-lg:justify-center max-lg:items-center gap-2">
+          {/* Days */}
           <div className="flex flex-col justify-center items-center gap-2 shadow bg-[#FFF] rounded-xl w-[98px] h-[122px]">
-            <h4 className="text-[#212337] text-4xl font-medium">03</h4>
+            <h4 className="text-[#212337] text-4xl font-medium">
+              {String(timeLeft.days).padStart(2, "0")}
+            </h4>
             <p className="text-[#4A4A52] text-xl">Days</p>
           </div>
+          {/* Hour */}
           <div className="flex flex-col justify-center items-center gap-2 shadow bg-[#FFF] rounded-xl w-[98px] h-[122px]">
-            <h4 className="text-[#212337] text-4xl font-medium">18</h4>
+            <h4 className="text-[#212337] text-4xl font-medium">
+              {String(timeLeft.hours).padStart(2, "0")}
+            </h4>
             <p className="text-[#4A4A52] text-xl">Hours</p>
           </div>
+          {/* Min */}
           <div className="flex flex-col justify-center items-center gap-2 shadow bg-[#FFF] rounded-xl w-[98px] h-[122px]">
-            <h4 className="text-[#212337] text-4xl font-medium">54</h4>
+            <h4 className="text-[#212337] text-4xl font-medium">
+              {String(timeLeft.minutes).padStart(2, "0")}
+            </h4>
             <p className="text-[#4A4A52] text-xl">Min</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-2 shadow bg-[#FFF] rounded-xl w-[98px] h-[122px]">
-            <h4 className="text-[#212337] text-4xl font-medium">21</h4>
+            <h4 className="text-[#212337] text-4xl font-medium">
+              {String(timeLeft.seconds).padStart(2, "0")}
+            </h4>
             <p className="text-[#4A4A52] text-xl">Second</p>
           </div>
         </div>

@@ -180,6 +180,7 @@ const Navbar = () => {
                 </div>
               )}
             </div>
+            
             <div className="ml-5">
               <button onClick={handleOpenNave} className="lg:hidden">
                 <GiHamburgerMenu size={20} />
