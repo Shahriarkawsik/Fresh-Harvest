@@ -24,6 +24,9 @@ type Products = {
   price: number;
   description: string;
 };
+type ClientProductPageProps = {
+  blogId: string;
+};
 
 type ApiResponse = {
   success: boolean;
@@ -34,7 +37,7 @@ type ApiResponses = {
   data: Product[];
 };
 
-export default function ClientProductPage({ blogId }: { blogId: string }) {
+export default function ClientProductPage({ blogId }: ClientProductPageProps) {
   const [product, setProduct] = useState<Product | null>(null);
   const [products, setProducts] = useState<Products[]>([]);
   const relatedProducts =
