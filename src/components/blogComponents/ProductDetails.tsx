@@ -24,7 +24,7 @@ export default function ProductDetails() {
     }
   };
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-20">
+    <section className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-20">
       <figure className="w-ful">
         <Image
           src="/assets/coconut.png"
@@ -102,6 +102,6 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

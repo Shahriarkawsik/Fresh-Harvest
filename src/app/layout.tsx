@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -30,7 +31,9 @@ export default function RootLayout({
         <main>
           <div className="min-h-screen">{children}</div>
         </main>
-        <footer> Footer </footer>
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );

@@ -1,16 +1,52 @@
+import Image from "next/image";
 import Link from "next/link";
 
 // import Image from 'next/image'
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 py-6 px-4 md:px-10 mt-28">
-      <div className="flex flex-col md:flex-row justify-between max-w-[1213px] mx-auto">
+    <footer className="bg-white border-t border-gray-200 py-6 px-4 md:px-10 mt-28 w-[92%] md:w-[92%] container mx-auto">
+      <div className="">
         {/* Logo and App Links */}
-        <div className="mb-6 md:mb-0">
-          <h3 className="text-xl font-bold text-green-700 mb-4">
-            Fresh Harvests
-          </h3>
-          <div className="flex space-x-4"></div>
+        <div className="flex flex-col justify-between gap-28">
+          {/* Fresh Harvest */}
+          <button className="flex items-center gap-2 sm:gap-4 rounded-lg px-4 py-1 md:px-6 md:py-3 bg-[#fff]">
+            <Image
+              src={"/assets/logo.png"}
+              width={25}
+              height={25}
+              alt="Fresh Harvest logo"
+            />
+            <h6 className="text-[#212337] font-bold text-[15px] sm:text-xl">
+              Fresh Harvest
+            </h6>
+          </button>
+          <div className="space-y-4">
+            <h3 className="text-[#212337] font-medium text-[12px]">
+              Download App:
+            </h3>
+            <div className="flex ">
+              <figure className="w-ful max-lg:mx-auto">
+                <Image
+                  src="/assets/appleApp.png"
+                  width={138}
+                  height={40}
+                  alt="appleApp"
+                  // className="w-full h-full rounded-3xl"
+                  // className="border max-sm:w-[340px] max-sm:h-[340px] max-lg:w-[700px] max-lg:h-[700px] max-2xl:w-[600px] max-2xl:h-[600px] 2xl:w-[650px] 2xl:h-[650px] py-5 rounded-2xl bg-fixed"
+                />
+              </figure>
+              <figure className="w-ful max-lg:mx-auto">
+                <Image
+                  src="/assets/googlePlay.png"
+                  width={138}
+                  height={40}
+                  alt="appleApp"
+                  // className="w-full h-full rounded-3xl"
+                  // className="border max-sm:w-[340px] max-sm:h-[340px] max-lg:w-[700px] max-lg:h-[700px] max-2xl:w-[600px] max-2xl:h-[600px] 2xl:w-[650px] 2xl:h-[650px] py-5 rounded-2xl bg-fixed"
+                />
+              </figure>
+            </div>
+          </div>
         </div>
 
         {/* Quick Links 1 */}
@@ -23,19 +59,22 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <a href="/shop" className="text-gray-600 hover:text-green-700">
+              <Link href="/shop" className="text-gray-600 hover:text-green-700">
                 Shop
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="text-gray-600 hover:text-green-700">
+              <Link
+                href="/about"
+                className="text-gray-600 hover:text-green-700"
+              >
                 About us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/blog" className="text-gray-600 hover:text-green-700">
+              <Link href="/blog" className="text-gray-600 hover:text-green-700">
                 Blog
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -45,30 +84,33 @@ export default function Footer() {
           <h4 className="text-lg font-semibold mb-2">Quick Links 2</h4>
           <ul className="space-y-2">
             <li>
-              <a
+              <Link
                 href="/favorites"
                 className="text-gray-600 hover:text-green-700"
               >
                 Favorites
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/cart" className="text-gray-600 hover:text-green-700">
+              <Link href="/cart" className="text-gray-600 hover:text-green-700">
                 Cart
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/sign-in" className="text-gray-600 hover:text-green-700">
+              <Link
+                href="/sign-in"
+                className="text-gray-600 hover:text-green-700"
+              >
                 Sign in
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/register"
                 className="text-gray-600 hover:text-green-700"
               >
                 Register
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -92,7 +134,8 @@ export default function Footer() {
       </div>
       <div className="flex justify-between max-w-[1213px] mx-auto">
         <div className=" text-gray-500 text-sm mt-6">
-          © Copyright 2024. All Rights Reserved by Banana Studio
+          © Copyright {new Date().getFullYear()}. All Rights Reserved by Banana
+          Studio
         </div>
         <div className="flex justify-center space-x-4 mt-2">
           {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
