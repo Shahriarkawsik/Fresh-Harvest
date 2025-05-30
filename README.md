@@ -32,14 +32,15 @@ cd Fresh-Harvest
 ```
 
 2. ** Install Dependencies **
-   > Using npm:
+
+- Using npm:
 
 ```bash
 npm install
 
 ```
 
-> Or using yarn:
+- Or using yarn:
 
 ```bash
 yarn install
@@ -47,14 +48,14 @@ yarn install
 ```
 
 3. **Run the Development Server**
-   > Using npm:
+  - Using npm:
 
 ```bash
 npm run dev
 
 ```
 
-> Or using yarn:
+- Or using yarn:
 
 ```bash
 yarn dev
