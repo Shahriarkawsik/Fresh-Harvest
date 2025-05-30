@@ -2,6 +2,12 @@
 
 Fresh Harvests is a modern and responsive e-commerce web application for fresh fruits and vegetables. Built with **Next.js**, **TypeScript**, and **TailwindCSS**, it offers a smooth shopping experience with features like dynamic product details, ratings, reviews, and related product suggestions.
 
+## 📂 Live link
+
+[https://fresh-harvest-peach.vercel.app/](https://fresh-harvest-peach.vercel.app/)
+
+---
+
 ## 📂 GitHub Repository
 
 [https://github.com/Shahriarkawsik/Fresh-Harvest](https://github.com/Shahriarkawsik/Fresh-Harvest)
@@ -48,7 +54,8 @@ yarn install
 ```
 
 3. **Run the Development Server**
-  - Using npm:
+
+- Using npm:
 
 ```bash
 npm run dev
