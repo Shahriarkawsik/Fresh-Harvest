@@ -21,16 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <head>
-        <link rel="icon" href="/favicon.png" sizes="any" type="image/png" />
-      </head> */}
       <body className={`${rubik.variable} antialiased`}>
         <header>
           <Navbar />
         </header>
-        <main>
-          <div className="min-h-screen">{children}</div>
-        </main>
+        <main>{children}</main>
         <footer>
           <Footer />
         </footer>
