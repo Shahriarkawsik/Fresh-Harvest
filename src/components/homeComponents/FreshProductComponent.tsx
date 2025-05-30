@@ -12,11 +12,21 @@ type ApiResponse = {
   success: boolean;
   data: Product[];
 };
+// type Category = {
+//   id: string;
+// };
+// type Categories = {
+//   data: Category[];
+// };
+
 export default function FreshProductComponent() {
   const [toggle, setToggle] = useState<string>("All");
-
   const [products, setProducts] = useState<Product[]>([]);
+  // const [categories, setCategories] = useState([]);
+  // const [categorySelect, setCategorySelect] = useState<Category | null>("");
 
+  // console.log("categorySelectId", categorySelect);
+  /* Fetch all products */
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,6 +43,25 @@ export default function FreshProductComponent() {
     fetchData();
   }, []);
 
+  /* Fetch all Categories */
+  // useEffect(() => {
+  //   const fetchCategories = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "https://code-commando.com/api/v1/category"
+  //       );
+  //       const result = await response.json();
+  //       setCategories(result.data);
+  //       if (result.data.length > 0) {
+  //         setCategorySelect(result.data[0].id);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching Categories:", error);
+  //     }
+  //   };
+  //   fetchCategories();
+  // }, []);
+
   return (
     <section className="space-y-10 lg:space-y-10">
       {/* Header */}
@@ -47,7 +76,7 @@ export default function FreshProductComponent() {
           We pride ourselves on offering a wide variety of fresh and flavorful
           fruits, vegetables, and salad ingredients.
         </p>
-        {/* Buttons */}
+        {/* Selector Buttons */}
         <div className="max-sm:space-x-2 max-lg:space-x-3 max-2xl:space-x-4 2xl:space-x-4">
           <button
             onClick={() => setToggle("All")}
@@ -59,6 +88,17 @@ export default function FreshProductComponent() {
           >
             All
           </button>
+          {/* {categories.map((category) => (
+            <button
+              key={category.id as string}
+              onClick={() => selectCategory(category)}
+              className={`btn btn-soft md:mx-4 ${
+                category.id === categorySelect ? "bg-[#749b3f] text-white" : ""
+              }`}
+            >
+              {category.categoryName}
+            </button>
+          ))} */}
           <button
             onClick={() => setToggle("Fruits")}
             className={`px-4 py-2 sm:px-8 sm:py-4 lg:px-6 lg:py-3 rounded-lg text-[12px] sm:text-xl lg:text-xl ${

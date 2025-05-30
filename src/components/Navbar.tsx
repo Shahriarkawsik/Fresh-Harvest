@@ -3,11 +3,10 @@ import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
 import { usePathname } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FaEye, FaEyeSlash, FaHeart } from "react-icons/fa6";
-import { CiShoppingCart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-
+import { FaCartShopping } from "react-icons/fa6";
 import {
   Dialog,
   DialogContent,
@@ -15,11 +14,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Checkbox } from "@/components/ui/checkbox";
+import Login from "./Login";
 
 const Navbar = () => {
   const pathName = usePathname();
-  /////////////////////dumy
+  /* Dummy status */
   const status = "authenticated";
 
   const [navBg, setNavBg] = useState<boolean>(false);
@@ -27,7 +26,6 @@ const Navbar = () => {
 
   const handleOpenNave = () => setShowNav(true);
   const handleCloseNave = () => setShowNav(false);
-  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const openNav = showNav ? "translate-x-0" : "translate-x-[100%]";
 
@@ -50,6 +48,7 @@ const Navbar = () => {
     { name: "Shop", path: "/shop" },
     { name: "About Us", path: "/aboutUs" },
     { name: "Blog", path: "/blog" },
+    { name: "addProduct", path: "/addProduct" },
   ];
 
   return (
@@ -58,7 +57,7 @@ const Navbar = () => {
       <div
         className={`${
           navBg ? "bg-white shadow-xl transition-all ease" : "text-white"
-        } h-[12vh] flex items-center fixed z-[999] w-full`}
+        } h-[12vh] flex items-center fixed z-[99] w-full`}
       >
         <nav className="flex justify-between items-center w-11/12 mx-auto px-4 md:px-8">
           {/* left logo  */}
@@ -67,9 +66,9 @@ const Navbar = () => {
               href="/"
               className="text-2xl lg:text-3xl font-semibold text-black"
             >
-              <p className="flex items-center gap-2">
+              <div className="flex items-center gap-2">
                 <Image
-                  src="/assets/logo.png"
+                  src={"/assets/logo.png"}
                   alt="logo"
                   width={30}
                   height={30}
@@ -78,7 +77,7 @@ const Navbar = () => {
                 <span className="text-[#212337] text-xl md:text-2xl font-bold">
                   Fresh Harvests
                 </span>
-              </p>
+              </div>
             </Link>
           </div>
 
@@ -102,30 +101,53 @@ const Navbar = () => {
           {/* right content */}
           <div className="flex items-center gap-3">
             <div className=" cursor-pointer p-0.5">
-              <p className="hidden lg:flex items-center gap-2">
-                <FaHeart /> Favorites
+              <p
+                className={`hidden lg:flex items-center gap-2 ${
+                  pathName !== "/" ? "text-black" : " "
+                }`}
+              >
+                <FaHeart
+                  className={pathName !== "/" ? "text-[#749B3F]" : " "}
+                />{" "}
+                Favorites
               </p>
             </div>
             <div className="flex items-center gap-3">
               <Link href="/card" className="relative">
-                <CiShoppingCart size={25} />
-                <sup className="absolute left-4 -top-1 w-4 h-4 rounded-full bg-red-500 flex justify-center items-center text-sm p-1 text-white">
+                <FaCartShopping
+                  size={20}
+                  className={pathName !== "/" ? "text-[#749B3F]" : " "}
+                />
+                <sup className="absolute left-3 -top-2 w-4 h-4 rounded-full bg-red-500 flex justify-center items-center text-sm p-1 text-white">
                   0
                 </sup>
-              </Link>{" "}
-              <p className="hidden lg:flex">Cart</p>
+              </Link>
+              <p
+                className={`hidden lg:flex ${
+                  pathName !== "/" ? "text-black" : " "
+                }`}
+              >
+                Cart
+              </p>
             </div>
+            
             {/* modal start from here  */}
             <div className="hidden lg:flex">
               {status !== "authenticated" ? (
-                <button className="font-semibold cursor-pointer py-1 px-4 rounded-4xl">
+                <button className="font-semibold cursor-pointer py-1 px-4 rounded-sm border">
                   Logout
                 </button>
               ) : (
-                <div className="flex gap-2">
+                <div className="flex gap-2 z-[999]">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <button className="font-semibold cursor-pointer py-1 px-4 rounded-4xl">
+                      <button
+                        className={
+                          pathName !== "/"
+                            ? "font-bold cursor-pointer py-1 px-4 rounded-sm border text-black border-black"
+                            : "font-semibold cursor-pointer py-1 px-4 rounded-sm border"
+                        }
+                      >
                         Sign In
                       </button>
                     </DialogTrigger>
@@ -135,55 +157,15 @@ const Navbar = () => {
                           Login
                         </DialogTitle>
                       </DialogHeader>
-                      {/* Sample form UI (replace with real form logic) */}
-                      <form className="flex flex-col gap-3 mt-4">
-                        <label className="text-[#212337]">Email</label>
-                        <input
-                          type="email"
-                          placeholder="Enter your email"
-                          className="p-2 border rounded"
-                        />
-                        <label className="text-[#212337]">Password</label>
-                        <input
-                          type={showPassword ? "text" : "password"}
-                          placeholder="Enter your password"
-                          className="p-2 border rounded"
-                        />
-                        <span
-                          onClick={() => setShowPassword(!showPassword)}
-                          className="btn btn-xs absolute right-10 top-58"
-                        >
-                          {showPassword ? (
-                            <FaEyeSlash className="text-[#A6A6A6]" />
-                          ) : (
-                            <FaEye className="text-[#A6A6A6]" />
-                          )}
-                        </span>
-                        <div className="flex justify-between items-center">
-                          <p className="flex items-center gap-2">
-                            <Checkbox className="border-[#FF6A1A]" />
-                            Remember me
-                          </p>
-                          <span className="border-b-2 border-gray-600">
-                            Forget Password
-                          </span>
-                        </div>
-                        <button
-                          type="submit"
-                          className="bg-[#FF6A1A] font-semibold text-white p-2 rounded text-lg"
-                        >
-                          Login
-                        </button>
-                      </form>
+                      <Login />
                     </DialogContent>
                   </Dialog>
                 </div>
               )}
             </div>
-            
             <div className="ml-5">
               <button onClick={handleOpenNave} className="lg:hidden">
-                <GiHamburgerMenu size={20} />
+                <GiHamburgerMenu size={20} className="text-black" />
               </button>
             </div>
           </div>
@@ -199,7 +181,7 @@ const Navbar = () => {
 
         {/* sidebar menu */}
         <div
-          className={`${openNav} right-0 fixed text-white flex justify-center flex-col h-full w-[80%] sm:w-[60%] bg-gray-600 space-y-6 z-[1006] transform transition-all duration-500`}
+          className={`${openNav} right-0 fixed text-white flex justify-center flex-col h-full w-[80%] sm:w-[60%] bg-[#749B3F] space-y-6 z-[1006] transform transition-all duration-500`}
         >
           <div className="flex flex-col justify-center space-y-5 text-black p-8 mt-10">
             <Link
@@ -245,6 +227,17 @@ const Navbar = () => {
               } w-fit`}
             >
               Blog
+            </Link>
+            <Link
+              onClick={handleCloseNave}
+              href="/#"
+              className={`${
+                pathName === "/#"
+                  ? "font-bold border-b-2 border-orange-600"
+                  : "font-semibold"
+              } w-fit`}
+            >
+              Sign In
             </Link>
           </div>
           <button onClick={handleCloseNave} className="absolute top-8 right-8">

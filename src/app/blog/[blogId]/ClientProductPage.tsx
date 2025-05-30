@@ -64,6 +64,7 @@ export default function ClientProductPage({ blogId }: ClientProductPageProps) {
   const rating: number = 5;
   const [image] = images;
 
+  
   const [quantity, setQuantity] = useState<number>(1);
   const handleIncrease = () => {
     setQuantity((prev) => prev + 1);

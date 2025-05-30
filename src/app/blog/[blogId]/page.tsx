@@ -14,6 +14,5 @@ export default async function Page({
   params: Promise<{ blogId: string }>;
 }) {
   const { blogId } = await params;
-  console.log(blogId);
   return <ClientProductPage blogId={blogId} />;
 }
