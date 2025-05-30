@@ -41,7 +41,7 @@ export default function ClientProductPage({ blogId }: ClientProductPageProps) {
   const [product, setProduct] = useState<Product | null>(null);
   const [products, setProducts] = useState<Products[]>([]);
   const relatedProducts =
-    products.filter((product) => product.id !== blogId[0]) || [];
+    products.filter((product) => product.id !== blogId) || [];
 
   /* Fetch all Product */
   useEffect(() => {
